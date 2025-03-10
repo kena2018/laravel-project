@@ -37,7 +37,7 @@ RUN npm install && npm run build
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache /var/www/public/build
 
 # Copy Nginx configuration
-COPY docker_files/lnginx.conf /etc/nginx/sites-available/default
+COPY laravel/nginx.conf /etc/nginx/sites-available/default
 RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 # Create startup script
