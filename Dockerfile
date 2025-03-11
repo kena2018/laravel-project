@@ -1,5 +1,5 @@
 # Use official PHP image with required extensions
-FROM php:7.4-fpm
+FROM php:8.2-fpm
 
 # Install required system dependencies
 RUN apt-get update && apt-get install -y \
@@ -23,7 +23,6 @@ WORKDIR /var/www
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
 
 # Clone utility repository
 RUN git clone https://github.com/kena2018/laravel-project.git
